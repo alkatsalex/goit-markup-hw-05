@@ -55,9 +55,21 @@
             <div class="container">
                 <h1 class="main-title">Ефективні рішення для вашого бізнесу</h1>
 
-                <button class="btn primary" type="button">Замовити послугу</button>
+                <button class="btn primary" type="button" data-modal-open>Замовити послугу</button>
             </div>
         </section>
+
+        <!-- Modal -->
+
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal"><button class="modal-btn" type="button" data-modal-close>
+                    <svg width="11" height="11">
+                        <use href="./imeges/icons.svg#cross"></use>
+                    </svg>
+                </button></div>
+        </div>
+
+
         <!--Features-->
 
         <section class="features section">
@@ -114,13 +126,40 @@
                 <h2 class="section-title">Чим ми займаємося</h2>
 
                 <ul class="list">
-                    <li class="item"><img src="./imeges/img-work/box-1.jpg" alt="Робота с кодом" width="370"
-                            height="295">
+                    <li class="item">
+                        <div class="activ-modal">
+                            <img src="./imeges/img-work/box-1.jpg" alt="Робота с кодом" width="370" height="295">
+                            <div class="modal-title">
+                                <p class="title">Десктопні додатки</p>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="activ-modal">
+                            <img src="./imeges/img-work/box-1.jpg" alt="Робота с кодом" width="370" height="295">
+                            <div class="modal-title">
+                                <p class="title">Десктопні додатки</p>
+                            </div>
+                        </div> -->
                     </li>
-                    <li class="item"><img src="./imeges/img-work/box-2.jpg"
-                            alt="Робота над інтерфейсом мобільного застосунку" width="370" height="295"></li>
-                    <li class="item"><img src="./imeges/img-work/box-3.jpg" alt="Робота з кольоровою палітрою"
-                            width="370" height="295">
+                    <li class="item">
+                        <div class="activ-modal">
+                            <img src="./imeges/img-work/box-2.jpg" alt="Робота над інтерфейсом мобільного застосунку"
+                                width="370" height="295">
+                            <div class="modal-title">
+                                <p class="title">Мобільні додатки</p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="item">
+                        <div class="activ-modal">
+                            <img src="./imeges/img-work/box-3.jpg" alt="Робота з кольоровою палітрою" width="370"
+                                height="295">
+                            <div class="modal-title">
+                                <p class="title">Дизайнерські рішення</p>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -209,7 +248,7 @@
                     aria-label="linkedin"><svg class="social-icon" width="20" height="20">
                         <use href="./imeges/icons.svg#linkedin"></use>
                     </svg></a></li>
-                    </ul>
+            </ul>
             </div>
             </li class="list-team">
             <li class="item">
@@ -345,7 +384,7 @@
 
         </div>
     </footer>
-
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
