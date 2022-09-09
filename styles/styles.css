@@ -15,9 +15,10 @@
     --backdrop: rgba(0, 0, 0, 0.2);
     --rgba-accent-bg: rgba(33, 150, 243, 0.9);
     --activity-modal:rgba(47, 48, 58, 0.8);
+    --duration: 250ms;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
-
 
 
 body {
@@ -157,7 +158,7 @@ img {
 }
 
 .list .link {
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+    transition: color var(--duration) var(--timing-function) ;
 }
 
 .list .link:hover,
@@ -241,6 +242,11 @@ img {
     color: var(--main-background-color);
 }
 
+
+/* animatons */
+
+
+
 /* Backdrom/Modal */
 
 .backdrop {
@@ -250,12 +256,20 @@ img {
     width: 100%;
     height: 100%;
     background-color: var(--backdrop);
+    transition: opacity var(--duration) var(--timing-function);
 
 }
 
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
+}
+
+.backdrop.is-hidden .modal {
+    opacity: 0;
+    transform: translate(-50%, 0px);
+  
 }
 
 .modal {
@@ -266,7 +280,12 @@ img {
     width: 528px;
     height: 581px;
     background-color: var(--main-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: opacity var(--duration) var(--timing-function), transform var(--duration) var(--timing-function) ;
+  
 }
+
 
 /* button */
 
@@ -292,7 +311,7 @@ img {
     background-color: var(--btn-color);
     font-family: inherit;
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shodow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--duration) var(--timing-function), background-color var(--duration) var(--timing-function), box-shodow var(--duration) var(--timing-function);
 }
 
 .btn:hover,
@@ -465,6 +484,7 @@ margin: 0;
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--main-color-title);
+    
 }
 
 .text {
@@ -522,7 +542,7 @@ margin: 0;
     border-radius: 50%;
     background-color: var(--main-background-color);
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--duration) var(--timing-function), background-color var(--duration) var(--timing-function);
 }
 
 .social-icon {
@@ -564,7 +584,7 @@ gap: 30px;
     width: 170px;
     height: 92px;
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    transition: color var(--duration) var(--timing-function), border-color var(--duration) var(--timing-function);
 }
 
 .client-section .link:hover,
@@ -623,7 +643,7 @@ gap: 30px;
 }
 
 .add-list .link {
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--duration) var(--timing-function);
 }
 
 .add-list .link:hover,
@@ -665,7 +685,7 @@ background-color: var(--white-ten-persent);
 }
 
 .sociallink .link {
-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: color var(--duration) var(--timing-function), background-color var(--duration) var(--timing-function), stroke var(--duration) var(--timing-function);
 }
 
 .sociallink .link:hover,
@@ -742,7 +762,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cub
 .list.card .link {
     display: block;
 
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow var(--duration) var(--timing-function);
 }
 
 .list.card .link:hover,
@@ -768,7 +788,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cub
 
     opacity: 0;
     transform: translate(0, 100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--duration) var(--timing-function);
 }
 
 .item.card:hover .card-thumb::before,
@@ -793,7 +813,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cub
 
     opacity: 0;
     transform: translate(0, 100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--duration) var(--timing-function);
     
 }
 
